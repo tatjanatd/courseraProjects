@@ -24,9 +24,9 @@ tBodyGyro-mean()-Z
 tBodyGyro-std()-X  
 tBodyGyro-std()-Y  
 tBodyGyro-std()-Z  
-tBodyGyroJerk-mean()-X
-tBodyGyroJerk-mean()-Y
-tBodyGyroJerk-mean()-Z  
+tBodyGyroJerk-mean()-X  
+tBodyGyroJerk-mean()-Y  
+tBodyGyroJerk-mean()-Z    
 tBodyGyroJerk-std()-X  
 tBodyGyroJerk-std()-Y  
 tBodyGyroJerk-std()-Z  
