@@ -6,7 +6,7 @@ project assignments
 Please go to the Branch: mynewbranch! there is the run_analysis and the readme.md
 
 
-ourse project 
+Course project 
 ================
 
 In the following it is explained what is done in the file **run_analysis.R**.
