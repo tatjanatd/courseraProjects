@@ -9,7 +9,6 @@ activity <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 tnames <- read.table("UCI HAR Dataset/features.txt") # 561 x 2, V2 contains variable-names
 dim(tnames)
-head(tnames, 9)
 
 ## load training data set
 d1 <- read.table(paste(getwd(),"/UCI HAR Dataset/train/X_train.txt", sep=""))
@@ -18,7 +17,6 @@ names(d1)
 ## Activity IDs, training dataset
 d1a <- read.table(paste(getwd(),"/UCI HAR Dataset/train/y_train.txt", sep=""))
 dim(d1a)
-head(d1a)
 table(d1a)
 ## subject IDs, training dataset
 d1b <- read.table(paste(getwd(),"/UCI HAR Dataset/train/subject_train.txt", sep=""))
@@ -48,7 +46,6 @@ d2$datasettype <- rep("test", nrow(d2))
 d <- rbind(d1, d2)
 dim(d) # 10299
 
-# names(d)[1:561] <- as.character(tnames$V2)
 ## (2)
 ## choose only important columns: activity, subject, all columns about mean & std
 names(d)[1:561] <- as.character(tnames$V2)
@@ -60,16 +57,14 @@ names(dnew)
 ## (3)
 dnew$activity <- factor(dnew$activity, levels=1:6, labels=activity$V2)
 table(dnew$activity)
-## (4)
+## (4) descriptive variable names were made in step 2 in order to find mean, std columns
 #names(dnew)[1:561] <- as.character(tnames$V2)
 
 table(dnew$subject, dnew$activity)
 
 write.table(dnew, file="tidydata.txt", row.names=FALSE)
 
-# tidy data set: pro person 6 zeilen (6 activities)
-## von 10299 reduzieren auf 6*30=180
-## dcast???
+# tidy data set: per person 6 rows (=6 activities)
 ## (5)
 dagg <- aggregate(dnew[, -(80:82)], by=list(Activity=dnew$activity, Subject=dnew$subject), mean)
 str(dagg)  # data frame 180 obs. of 81 variables
