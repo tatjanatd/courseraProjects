@@ -26,4 +26,4 @@ They are needed since the activities given for each row in the data set are code
 
 7. Using the function grep, the important columns, that contain the character "mean" or "std", are selected. This tidy data set is exported in a text file.
 
-8. Using the function aggregate, mean values of the left 79 variables, are calculated for each person and each activity. This tidy data set is also exported into a text file.
+8. Using the function aggregate, mean values of the remaining 79 (Samsung-)variables, are calculated for each person and each activity. This tidy data set is also exported into a text file.
